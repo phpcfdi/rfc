@@ -1,0 +1,68 @@
+{
+    "name": "phpcfdi/rfc",
+    "description": "PHP library to deal with Mexican RFC",
+    "keywords": ["mexico", "sat"],
+    "homepage": "https://github.com/phpcfdi/rfc",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Carlos C Soto",
+            "email": "eclipxe13@gmail.com",
+            "homepage": "http://eclipxe.com.mx/"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/phpcfdi/rfc",
+        "issues": "https://github.com/phpcfdi/rfc/issues"
+    },
+    "require": {
+        "php": ">=7.3",
+        "ext-mbstring": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.1",
+        "fzaninotto/faker": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpCfdi\\Rfc\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhpCfdi\\Rfc\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "dev:install": [
+            "bash develop/install-development-tools"
+        ],
+        "dev:build": ["@dev:fix-style", "@dev:test"],
+        "dev:check-style": [
+            "tools/php-cs-fixer fix --dry-run --verbose",
+            "tools/phpcs --colors -sp src/ tests/"
+        ],
+        "dev:fix-style": [
+            "tools/php-cs-fixer fix --verbose",
+            "tools/phpcbf --colors -sp src/ tests/"
+        ],
+        "dev:test": [
+            "@dev:check-style",
+            "vendor/bin/phpunit --testdox --verbose --stop-on-failure",
+            "tools/phpstan analyse --no-progress --level max src/ tests/",
+            "tools/psalm --no-progress"
+        ],
+        "dev:coverage": [
+            "@php -dzend_extension=xdebug.so vendor/bin/phpunit --testdox --coverage-html build/coverage/html/"
+        ]
+    },
+    "scripts-descriptions": {
+        "dev:install": "DEV: install development tools into tools/",
+        "dev:build": "DEV: run dev:fix-style dev:tests and dev:docs, run before pull request",
+        "dev:check-style": "DEV: search for code style errors using php-cs-fixer and phpcs",
+        "dev:fix-style": "DEV: fix code style errors using php-cs-fixer and phpcbf",
+        "dev:test": "DEV: run phplint, dev:check-style, phpunit, phpstan and psalm",
+        "dev:coverage": "DEV: run phpunit with xdebug and storage coverage in build/coverage/html/"
+    }
+}

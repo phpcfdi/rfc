@@ -1,0 +1,21 @@
+#!/usr/bin/env bash -e
+
+TOOLS_DIR=tools
+
+function install_from_github() {
+  local destination="${TOOLS_DIR}/${3}"
+  if [ -f "$destination" ]; then
+    rm "$destination"
+  fi
+  wget "https://github.com/${1}/releases/latest/download/${2}" -O "${TOOLS_DIR}/${3}"
+  chmod +x "$destination"
+}
+
+mkdir -p "$TOOLS_DIR"
+
+install_from_github FriendsOfPHP/PHP-CS-Fixer php-cs-fixer.phar php-cs-fixer
+install_from_github squizlabs/PHP_CodeSniffer phpcbf.phar phpcbf
+install_from_github squizlabs/PHP_CodeSniffer phpcs.phar phpcs
+install_from_github phpstan/phpstan phpstan.phar phpstan
+install_from_github vimeo/psalm psalm.phar psalm
+install_from_github infection/infection infection.phar infection
