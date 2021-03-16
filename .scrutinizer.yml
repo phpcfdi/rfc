@@ -2,12 +2,13 @@ filter:
   excluded_paths:
     - 'tests/'
     - 'vendor/'
+    - 'tools/'
 
 build:
   dependencies:
     override:
       - composer self-update --no-interaction --no-progress
-      - composer install --no-interaction --no-progress
+      - composer upgrade --no-interaction --no-progress --prefer-dist
   nodes:
     analysis:
       tests:
