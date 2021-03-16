@@ -16,10 +16,10 @@ $rfcFisica = $faker->mexicanRfcFisica();
 La forma de crearlo es con un número aleatorio para personas morales, o bien para personas físicas,
 o bien para todo el espectro.
 
-## Integración con `fzaninotto/Faker`
+## Integración con `FakerPHP/Faker`
 
 También se puede usar ese mismo objeto dentro de la librería más común para generación de falsos
- en PHP [`fzaninotto/Faker`](https://github.com/fzaninotto/Faker).
+ en PHP [`FakerPHP/Faker`](https://github.com/FakerPHP/Faker).
 
 ```php
 $faker = new Faker\Generator();

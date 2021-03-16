@@ -83,7 +83,7 @@ Si se desea saber que el RFC es genérico se puede usar el método `Rfc::isGener
 ## Generador de RFC
 
 Es común usar generadores (ficticios) de datos, esta librería provee la clase `RfcFaker` que se puede utilizar
-por sí sola o en conjunto con [`fzaninotto/Faker`](https://github.com/fzaninotto/Faker).
+por sí sola o en conjunto con [`FakerPHP/Faker`](https://github.com/FakerPHP/Faker).
 
 Provee métodos para crear una cadena de caracteres que es una clave RFC:
 
