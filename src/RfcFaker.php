@@ -7,7 +7,7 @@ namespace PhpCfdi\Rfc;
 /**
  * This class creates a random but syntactically valid Rfc string
  *
- * You can use it with `fzaninotto/Faker` library by registering into the faker generator:
+ * You can use it with `FakerPHP/Faker` library by registering into the faker generator:
  * ```php
  * $faker = new Faker\Generator();
  * $faker->addProvider(new PhpCfdi\Rfc\RfcFaker());

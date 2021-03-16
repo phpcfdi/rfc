@@ -2,7 +2,7 @@
 
 En algunas ocasiones puede resultar útil inventarse RFC, por ejemplo, al estar haciendo pruebas.
 
-Para generar claves RFC inventadas (*fakes*) se puede utilizar la clase `RfcFaker` que ṕuede crear un RFC
+Para generar claves RFC inventadas (*fakes*) se puede utilizar la clase `RfcFaker` que puede crear un RFC
 cualquiera `RfcFaker::mexicanRfc()` o de persona moral `RfcFaker::mexicanRfcMoral()`
 o de persona física `RfcFaker::mexicanRfcFisica()`.
 
@@ -16,11 +16,11 @@ $rfcFisica = $faker->mexicanRfcFisica();
 La forma de crearlo es con un número aleatorio para personas morales, o bien para personas físicas,
 o bien para todo el espectro.
 
-## Integración con `fzaninotto/Faker`
+## Integración con `FakerPHP/Faker`
 
 También se puede usar ese mismo objeto dentro de la librería más común para generación de falsos
- en PHP [`fzaninotto/Faker`](https://github.com/fzaninotto/Faker).
- 
+ en PHP [`FakerPHP/Faker`](https://github.com/FakerPHP/Faker).
+
 ```php
 $faker = new Faker\Generator();
 $faker->addProvider(new PhpCfdi\Rfc\RfcFaker());

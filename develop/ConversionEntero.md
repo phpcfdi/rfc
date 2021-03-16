@@ -2,29 +2,29 @@
 
 La clave RFC se compone de 4 partes: `[Siglas] + [Fecha] + [Homoclave] + [Verificador]`.
 
-Las `[Siglas]` son 4 o 3 caracteres dependiendo si se trata de una persona física (4) o moral (3).
-Además dw que incluyen las letras, se incluye el `&` y `Ñ`, siendo la *eñe* un caracter de 2 bytes.
+El campo `[Siglas]` son 4 o 3 caracteres dependiendo si se trata de una persona física (4) o moral (3).
+Además dw que incluyen las letras, se incluye `&` y `Ñ`, siendo la *eñe* un símbolo de 2 bytes.
 
-La `[Fecha]` es todo un tema, pues no usa 4 dígitos para el año, solo usa 2, luego entonces `000229` es inválido
+El campo `[Fecha]` es todo un tema, pues no usa 4 dígitos para el año, solo usa 2, luego entonces `000229` es inválido
 para `1900-02-29` pero válido para `2000-02-29`.
 
-La `[Homoclave]` en realidad incluye al dígito verificador, pero por el momento lo separaremos, básicamente porque
+El campo `[Homoclave]` en realidad incluye al dígito verificador, pero por el momento lo separaremos, básicamente porque
 los caracteres que pueden incluirse son diferentes, en este caso se incluyen números y letras pero sin `&` ni `Ñ`.
 
-El `[Verificador]` es un dígito calculado, pero no hay un estándar publicado bien definido, y he encontrado que
+El campo `[Verificador]` es un dígito calculado, pero no hay un estándar publicado bien definido, y he encontrado que
 a pesar de las reglas para obtenerlo existen RFC que no cumplen (ni pueden cumplir) dicha regla, es como si el SAT
 simplemente hubiera seguido con el siguiente dígito para un RFC de una misma entidad.
 Los caracteres que lo componen son números y la letra `A`.
 
 Tomando en cuenta las reglas anteriores, tenemos que un RFC como cadena de caracteres puede contener hasta 17 bytes,
-y al momento de trabajar con un gran volúmen de información con este dato como índice pues podría ser bastante lento,
+y al momento de trabajar con un gran volumen de información con este dato como índice pues podría ser bastante lento,
 por ejemplo, en el caso de la lista de "RFC inscritos no cancelados".
 
 Entonces, para resolver este problema, hice un convertidor que utiliza diferentes bases para ir y regresar de un entero.
 
 ## Conversión a bases
 
-Primero se eliminan los multibytes y se acota el universo a sólo mayúsculas.
+Primero se eliminan los multibyte y se acota el universo a solamente mayúsculas.
 Con eso podemos entender las siguientes bases:
 
 | Sigla opcional        | 3 Siglas obligatorias | Fecha                     | 2 Homoclave   | Verificador   |
@@ -35,7 +35,7 @@ Con eso podemos entender las siguientes bases:
 La fecha son 36525 opciones porque hay 25 años bisiestos, si se contara desde `1900-01-01` encontrarás que hay solo 24.
 
 Dado lo anterior, se comporta como cualquier conversión de bases, con la salvedad de que cada grupo tiene un exponente
-calculado en base a sus predecesores y no a su posición (porque las bases son diferentes).
+calculado con base en sus predecesores y no a su posición (porque las bases son diferentes).
 
 Entonces, los exponentes por grupo son (opción previa × anterior):
 
@@ -58,11 +58,11 @@ Para el RFC `COSC8001137NA` se tiene que hacer la conversión por cada grupo:
 | Grupo   | N1   | N2   | N3   | N4   | Fecha         | H1   | H1   | V    |
 | ---     | ---  | ---  | ---  | ---  | ---           | ---  | ---  | ---  |
 | Valor   | `C`  | `O`  | `S`  | `C`  | `2080-01-13`  | `7`  | `N`  | `A`  | 
-| Entrero | `3`  | `14` | `18` | `2`  | `29,232`      | `7`  | `23` | `10` |
+| Entero  | `3`  | `14` | `18` | `2`  | `29,232`      | `7`  | `23` | `10` |
 
 Haciendo la suma de la multiplicación del valor entero por los exponentes, el número de serie es: `40,270,344,269,627`.
 
-La primer `C` tiene un valor de `3` porque la primer opción es `0 => <vacío>`,
+La primera letra `C` tiene un valor de `3` porque la primera opción es `0 => <vacío>`,
 a diferencia de la segunda `C` con valor `2` porque en ese grupo el primer valor es `0 => A`.
 
 Para regresar de la representación impresa se hace un ejercicio semejante pero utilizando el módulo según su base,

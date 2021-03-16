@@ -44,11 +44,22 @@ final class RfcParser
      */
     public static function parse(string $rfc): self
     {
-        $regex = '/^' // desde el inicio
-            . '(?<name>[A-ZÑ&]{3,4})' // letras y números para el nombre (3 para morales, 4 para físicas)
-            . '(?<year>[0-9]{2})(?<month>[0-9]{2})(?<day>[0-9]{2})' // año mes y día, la validez de la fecha se comprueba después
-            . '(?<hkey>[A-Z0-9]{2})(?<checksum>[A0-9]{1})' // homoclave (letra o dígito 2 veces + A o dígito 1 vez)
-            . '$/u'; // hasta el final, considerar la cadena unicode
+        /*
+         * Explicación de la expresión regular:
+         * - desde el inicio
+         *      /^
+         * - letras y números para el nombre (3 para morales, 4 para físicas)
+         *      (?<name>[A-ZÑ&]{3,4})
+         * - año mes y día, la validez de la fecha se comprueba después
+         *      (?<year>[0-9]{2})(?<month>[0-9]{2})(?<day>[0-9]{2})
+         * - homoclave (letra o dígito 2 veces + A o dígito 1 vez)
+         *      (?<hkey>[A-Z0-9]{2})(?<checksum>[A0-9]{1})
+         * - hasta el final
+         *      $/
+         * - tratamiento unicode
+         *      u
+         */
+        $regex = '/^(?<name>[A-ZÑ&]{3,4})(?<year>[0-9]{2})(?<month>[0-9]{2})(?<day>[0-9]{2})(?<hkey>[A-Z0-9]{2})(?<checksum>[A0-9]{1})$/u';
         if (1 !== preg_match($regex, mb_strtoupper($rfc), $matches)) {
             throw Exceptions\InvalidExpressionToParseException::invalidParts($rfc);
         }
