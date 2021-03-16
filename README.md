@@ -8,14 +8,14 @@
 [![Coverage Status][badge-coverage]][coverage]
 [![Total Downloads][badge-downloads]][downloads]
 
-> PHP library to deal with Mexican RFC
+> Librería de PHP para trabajar con RFC.
 
-:us: The documentation of this project is in spanish as this is the natural language for intented audience.
+:us: The documentation of this project is in spanish as this is the natural language for the intended audience.
 
 ## Acerca de 
 
 En México, toda persona física o moral para realizar cualquier actividad económica requiere de un registro
-ante la Secrcetaría de Hacienda y Crédito Público (SHCP) llamado Registro Federal de Contribuyentes (RFC).
+ante la Secretaría de Hacienda y Crédito Público (SHCP) llamado Registro Federal de Contribuyentes (RFC).
 
 Esta librería permite trabajar con esta clave desde el aplicativo de PHP.
 
@@ -55,7 +55,7 @@ No se puede crear un objeto a partir del constructor `new Rfc`. Use `Rfc::unpars
 
 Se recomienda que siempre que se crea el objeto pero los datos de origen no son de confianza se utilice `Rfc::parse`.
 
-El único dato importante dentro del RFC es la cadena de cacateres misma. Por ello se ha implementado que la conversión
+El único dato importante dentro del RFC es la cadena de caracteres misma. Por ello se ha implementado que la conversión
 a cadena de caracteres y la exportación a JSON devuelvan específicamente este dato.
 
 ## Números de serie
@@ -73,7 +73,7 @@ de conversión por lo que su ejecución es lo más veloz que puede ser.
 ## RFC genérico y foráneo
 
 Es frecuente utilizar RFC que son *virtuales*, por ejemplo, para operaciones sin identificar como una
-venta de mostrador u operaciones con extrajeros, en estos casos están las constantes
+venta de mostrador u operaciones con extranjeros, en estos casos están las constantes
 `Rfc::RFC_GENERIC = 'XAXX010101000'` y `Rfc::RFC_FOREIGN = 'XEXX010101000'` respectivamente.
 
 Puede usar los métodos `Rfc::newGeneric()` y `Rfc::newForeign()` para crear instancias con estos datos.
@@ -93,7 +93,7 @@ Provee métodos para crear una cadena de caracteres que es una clave RFC:
 
 ## Desarrollo
 
-Para entender esta librería a nivel de desarrollo (para extender o modificar), lee los siguientes documentos:
+Para entender esta librería en el ámbito de desarrollo (para extender o modificar), lee los siguientes documentos:
 
 - [Entorno de desarrollo](develop/EntornoDesarrollo.md).
 - [Consideraciones generales de la librería](develop/Generales.md).
@@ -107,7 +107,7 @@ Puedes obtener soporte abriendo un ticker en Github.
 Adicionalmente, esta librería pertenece a la comunidad [PhpCfdi](https://www.phpcfdi.com), así que puedes usar los
 mismos canales de comunicación para obtener ayuda de algún miembro de la comunidad.
 
-## Compatilibilidad
+## Compatibilidad
 
 Esta librería se mantendrá compatible con al menos la versión con
 [soporte activo de PHP](https://www.php.net/supported-versions.php) más reciente.
@@ -118,7 +118,7 @@ sin temor a romper tu aplicación.
 ## Contribuciones
 
 Las contribuciones con bienvenidas. Por favor lee [CONTRIBUTING][] para más detalles
-y recuerda revisar el archivo de tareas pendientes [TODO][] y el [CHANGELOG][].
+y recuerda revisar el archivo de tareas pendientes [TODO][] y el archivo [CHANGELOG][].
 
 ## Copyright and License
 
