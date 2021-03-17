@@ -1,0 +1,60 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build:
+    name: PHP ${{ matrix.php-versions }}
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      matrix:
+        php-versions: ['7.3', '7.4', '8.0']
+
+    steps:
+      # see https://github.com/marketplace/actions/setup-php-action
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, json
+          coverage: none
+          tools: composer:v2, cs2pr, phpcs, php-cs-fixer, phpstan, psalm, infection
+        env:
+          fail-fast: true
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install project dependencies
+        run: composer upgrade --no-interaction --no-progress --prefer-dist
+
+      - name: Code style
+        run: |
+          phpcs -q --report=checkstyle src/ tests/ | cs2pr
+          php-cs-fixer fix --dry-run --format=checkstyle | cs2pr
+
+      - name: Tests
+        run: vendor/bin/phpunit --testdox --verbose
+
+      - name: Code analysis
+        run: |
+          phpstan analyse --level max --no-progress --verbose src/ tests/
+          psalm --no-progress --output-format=github
+
+      - name: Mutation testing analysis
+        run: phpdbg -qrr $(which infection) --no-progress --no-interaction --show-mutations
+        continue-on-error: true
