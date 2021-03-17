@@ -47,4 +47,5 @@ jobs:
           psalm --no-progress
 
       - name: Mutation testing analysis
-        run: phpdbg -qrr $(which infection) --no-progress --no-interaction --show-mutations || true
+        run: phpdbg -qrr $(which infection) --no-progress --no-interaction --show-mutations
+        continue-on-error: true
