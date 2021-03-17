@@ -42,18 +42,20 @@ jobs:
       - name: Install project dependencies
         run: composer upgrade --no-interaction --no-progress --prefer-dist
 
-      - name: Code style
-        run: |
-          phpcs -q --report=checkstyle src/ tests/ | cs2pr
-          php-cs-fixer fix --dry-run --format=checkstyle | cs2pr
+      - name: Code style (phpcs)
+        run: phpcs -q --report=checkstyle src/ tests/ | cs2pr
 
-      - name: Tests
+      - name: Code style (php-cs-fixer)
+        run: php-cs-fixer fix --dry-run --format=checkstyle | cs2pr
+
+      - name: Tests (phpunit)
         run: vendor/bin/phpunit --testdox --verbose
 
-      - name: Code analysis
-        run: |
-          phpstan analyse --level max --no-progress --verbose src/ tests/
-          psalm --no-progress --output-format=github
+      - name: Code analysis (phpstan)
+        run: phpstan analyse --level max --no-progress --verbose src/ tests/
+
+      - name: Code analysis (psalm)
+        run: psalm --no-progress --output-format=github
 
       - name: Mutation testing analysis
         run: phpdbg -qrr $(which infection) --no-progress --no-interaction --show-mutations
