@@ -24,7 +24,7 @@ jobs:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring, json
           coverage: none
-          tools: composer:v2, phpcs, php-cs-fixer, phpstan, psalm, infection
+          tools: composer:v2, cs2pr, phpcs, php-cs-fixer, phpstan, psalm, infection
         env:
           fail-fast: true
 
@@ -44,8 +44,8 @@ jobs:
 
       - name: Code style
         run: |
-          phpcs -sp src/ tests/
-          php-cs-fixer fix --dry-run --verbose
+          phpcs -q --report=checkstyle src/ tests/ | cs2pr
+          php-cs-fixer fix --dry-run --format=checkstyle | cs2pr
 
       - name: Tests
         run: vendor/bin/phpunit --testdox --verbose
@@ -53,7 +53,7 @@ jobs:
       - name: Code analysis
         run: |
           phpstan analyse --level max --no-progress --verbose src/ tests/
-          psalm --no-progress
+          psalm --no-progress --output-format=github
 
       - name: Mutation testing analysis
         run: phpdbg -qrr $(which infection) --no-progress --no-interaction --show-mutations
