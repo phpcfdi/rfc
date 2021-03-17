@@ -16,6 +16,7 @@ jobs:
         php-versions: ['7.3', '7.4', '8.0']
 
     steps:
+      # see https://github.com/marketplace/actions/setup-php-action
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -25,28 +26,25 @@ jobs:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring
           coverage: none
-          tools: composer:v2
+          tools: composer:v2, phpcs, php-cs-fixer, phpstan, psalm, infection
         env:
           fail-fast: true
 
       - name: Install composer dependencies
         run: composer upgrade --no-interaction --no-progress --prefer-dist
 
-      - name: Install development dependencies
-        run: bash develop/install-development-tools
-
       - name: Code style
         run: |
-          tools/phpcs -sp src/ tests/
-          tools/php-cs-fixer fix --dry-run --verbose
+          phpcs -sp src/ tests/
+          php-cs-fixer fix --dry-run --verbose
 
       - name: Tests
         run: vendor/bin/phpunit --testdox --verbose
 
       - name: Code analysis
         run: |
-          tools/phpstan analyse --level max --no-progress --verbose src/ tests/
-          tools/psalm --no-progress
+          phpstan analyse --level max --no-progress --verbose src/ tests/
+          psalm --no-progress
 
       - name: Mutation testing analysis
-        run: phpdbg -qrr tools/infection --no-progress --no-interaction --show-mutations || true
+        run: phpdbg -qrr $(which infection) --no-progress --no-interaction --show-mutations || true
