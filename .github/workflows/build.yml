@@ -28,7 +28,7 @@ jobs:
         env:
           fail-fast: true
 
-      - name: Install composer dependencies
+      - name: Install project dependencies
         run: composer upgrade --no-interaction --no-progress --prefer-dist
 
       - name: Code style
