@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: PHP {{ matrix.php-versions }}
     runs-on: "ubuntu-latest"
 
     strategy:
@@ -47,5 +48,5 @@ jobs:
           tools/phpstan analyse --level max --no-progress --verbose src/ tests/
           tools/psalm --no-progress
 
-      - name: infection
+      - name: Mutation testing analysis
         run: phpdbg -qrr tools/infection --no-progress --no-interaction --show-mutations || true
