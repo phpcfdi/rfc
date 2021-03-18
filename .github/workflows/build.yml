@@ -1,8 +1,9 @@
+name: build
 on:
   pull_request:
   push:
-    branches:
-      - "master"
+  schedule:
+    - cron: '0 16 * * 0' # sunday 16:00
 
 jobs:
   build:

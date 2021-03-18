@@ -133,7 +133,7 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [source]: https://github.com/phpcfdi/rfc
 [release]: https://github.com/phpcfdi/rfc/releases
 [license]: https://github.com/phpcfdi/rfc/blob/master/LICENSE
-[build]: https://github.com/phpcfdi/rfc/actions?query=branch%3Amaster
+[build]: https://github.com/phpcfdi/rfc/actions/workflows/build.yml?query=branch:master
 [quality]: https://scrutinizer-ci.com/g/phpcfdi/rfc/
 [coverage]: https://scrutinizer-ci.com/g/phpcfdi/rfc/code-structure/master/code-coverage
 [downloads]: https://packagist.org/packages/phpcfdi/rfc
@@ -141,7 +141,7 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [badge-source]: http://img.shields.io/badge/source-phpcfdi/rfc-blue?style=flat-square
 [badge-release]: https://img.shields.io/github/release/phpcfdi/rfc?style=flat-square
 [badge-license]: https://img.shields.io/github/license/phpcfdi/rfc?style=flat-square
-[badge-build]: https://img.shields.io/github/status/phpcfdi/rfc/build/master?style=flat-square
+[badge-build]: https://img.shields.io/github/workflow/status/phpcfdi/rfc/build/master?style=flat-square
 [badge-quality]: https://img.shields.io/scrutinizer/g/phpcfdi/rfc/master?style=flat-square
 [badge-coverage]: https://img.shields.io/scrutinizer/coverage/g/phpcfdi/rfc/master?style=flat-square
 [badge-downloads]: https://img.shields.io/packagist/dt/phpcfdi/rfc?style=flat-square
