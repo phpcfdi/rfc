@@ -106,7 +106,7 @@ final class RfcTest extends TestCase
         $data = ['rfc' => Rfc::unparsed('COSC8001137NA')];
         $this->assertJsonStringEqualsJsonString(
             '{"rfc": "COSC8001137NA"}',
-            json_encode($data) ?: ''
+            json_encode($data) ?: '',
         );
     }
 
