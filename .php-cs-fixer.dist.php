@@ -19,7 +19,7 @@ return (new PhpCsFixer\Config())
         'no_extra_blank_lines' => true,
         'function_typehint_space' => true,
         'no_alias_functions' => true,
-        'trailing_comma_in_multiline' => ['elements' => ['arrays']],
+        'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments']],
         'new_with_braces' => true,
         'no_blank_lines_after_class_opening' => true,
         'no_blank_lines_after_phpdoc' => true,
