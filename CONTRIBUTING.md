@@ -72,7 +72,7 @@ composer dev:check-style
 # Corrección de estilo de código
 composer dev:fix-style
 
-# Ejecución de pruebas
+# Ejecución de pruebas (phpunit, phpstan, psalm, infection)
 composer dev:test
 
 # Ejecución todo en uno: corregir estilo, verificar estilo y correr pruebas
