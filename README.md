@@ -34,7 +34,7 @@ use PhpCfdi\Rfc\Rfc;
 // suponiendo que llega un formulario con rfc => COSC8001137NA
 $rfc = Rfc::parse($_POST['rfc']);
 echo $rfc->getRfc(); // COSC8001137NA
-echo (string) $rfc; // COSC8001137NA
+echo $rfc; // COSC8001137NA
 echo json_encode(['data' => $rfc]); // {"data": "COSC8001137NA"}
 var_dump($rfc->isFisica()); // bool(true)
 var_dump($rfc->isMoral()); // bool(false)
@@ -53,7 +53,7 @@ El objeto `Rfc` se puede crear a partir de cuatro formas:
 
 No se puede crear un objeto a partir del constructor `new Rfc`. Use `Rfc::unparsed` en su lugar.
 
-Se recomienda que siempre que se crea el objeto pero los datos de origen no son de confianza se utilice `Rfc::parse`.
+Se recomienda que, siempre que se crea el objeto y los datos de origen no son de confianza, se utilice `Rfc::parse`.
 
 El único dato importante dentro del RFC es la cadena de caracteres misma. Por ello se ha implementado que la conversión
 a cadena de caracteres y la exportación a JSON devuelvan específicamente este dato.
@@ -124,7 +124,6 @@ y recuerda revisar el archivo de tareas pendientes [TODO][] y el archivo [CHANGE
 
 The `phpcfdi/rfc` library is copyright © [PhpCfdi](https://www.phpcfdi.com)
 and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
-
 
 [contributing]: https://github.com/phpcfdi/rfc/blob/main/CONTRIBUTING.md
 [changelog]: https://github.com/phpcfdi/rfc/blob/main/docs/CHANGELOG.md
