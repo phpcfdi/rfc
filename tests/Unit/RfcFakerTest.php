@@ -20,6 +20,7 @@ class RfcFakerTest extends TestCase
     public function testMexicanRfc(): void
     {
         $faker = new RfcFaker();
+        /** @noinspection PhpUnusedLocalVariableInspection */
         foreach (range(1, $this->iterations) as $i) {
             $strRfc = $faker->mexicanRfc();
             $this->assertNotNull(Rfc::parseOrNull($strRfc), "Cannot create an RFC from $strRfc");
@@ -29,6 +30,7 @@ class RfcFakerTest extends TestCase
     public function testMexicanRfcPersonaFisica(): void
     {
         $faker = new RfcFaker();
+        /** @noinspection PhpUnusedLocalVariableInspection */
         foreach (range(1, $this->iterations) as $i) {
             $strRfc = $faker->mexicanRfcFisica();
             $rfc = Rfc::parse($strRfc);
@@ -39,6 +41,7 @@ class RfcFakerTest extends TestCase
     public function testMexicanRfcPersonaMoral(): void
     {
         $faker = new RfcFaker();
+        /** @noinspection PhpUnusedLocalVariableInspection */
         foreach (range(1, $this->iterations) as $i) {
             $strRfc = $faker->mexicanRfcMoral();
             $rfc = Rfc::parse($strRfc);

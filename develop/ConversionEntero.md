@@ -65,7 +65,7 @@ Haciendo la suma de la multiplicación del valor entero por los exponentes, el n
 La primera letra `C` tiene un valor de `3` porque la primera opción es `0 => <vacío>`,
 a diferencia de la segunda `C` con valor `2` porque en ese grupo el primer valor es `0 => A`.
 
-Para regresar de la representación impresa se hace un ejercicio semejante pero utilizando el módulo según su base,
+Para regresar de la representación impresa se hace un ejercicio semejante, pero utilizando el módulo según su base,
 es decir, primero el módulo de `11`, después de `36`, y así hasta el módulo de `29`, y en cada iteración quitando
 el valor previo del módulo por la base.
 
