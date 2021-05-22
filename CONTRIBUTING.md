@@ -82,5 +82,5 @@ composer dev:build
 [phpCfdi]:      https://github.com/phpcfdi/
 [project]:      https://github.com/phpcfdi/rfc
 [contributors]: https://github.com/phpcfdi/rfc/graphs/contributors
-[coc]:          https://github.com/phpcfdi/rfc/blob/master/CODE_OF_CONDUCT.md
+[coc]:          https://github.com/phpcfdi/rfc/blob/main/CODE_OF_CONDUCT.md
 [issues]:       https://github.com/phpcfdi/rfc/issues
