@@ -49,7 +49,7 @@
         ],
         "dev:test": [
             "@php vendor/bin/phpunit --testdox --verbose --stop-on-failure",
-            "@php tools/phpstan analyse --no-progress --level max src/ tests/",
+            "@php tools/phpstan analyse --no-progress",
             "@php tools/psalm --no-progress"
         ],
         "dev:coverage": [

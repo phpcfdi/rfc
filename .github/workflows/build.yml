@@ -15,10 +15,10 @@ jobs:
         php-versions: ['7.3', '7.4', '8.0']
 
     steps:
-      # see https://github.com/marketplace/actions/setup-php-action
       - name: Checkout
         uses: actions/checkout@v2
 
+      # see https://github.com/marketplace/actions/setup-php-action
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -53,7 +53,7 @@ jobs:
         run: vendor/bin/phpunit --testdox --verbose
 
       - name: Code analysis (phpstan)
-        run: phpstan analyse --level max --no-progress --verbose src/ tests/
+        run: phpstan analyse --no-progress --verbose
 
       - name: Code analysis (psalm)
         run: psalm --no-progress --output-format=github
