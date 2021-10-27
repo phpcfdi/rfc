@@ -1,3 +1,4 @@
 # phpcfdi/rfc To Do List
 
-No hay tareas pendientes documentadas.
+Revisar que `psalm` sea capaz de analizar correctamente el archivo `src/RfcIntConverter.php` porque está
+encontrando falsos positivos sobre tipos de datos.
