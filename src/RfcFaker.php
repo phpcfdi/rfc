@@ -52,6 +52,7 @@ final class RfcFaker
         return $this->privateMakeRfc(RfcIntConverter::FISICA_LOWER_BOUND, RfcIntConverter::FISICA_UPPER_BOUND);
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     private function privateMakeRfc(int $lowerBound, int $upperBound): string
     {
         $converter = new RfcIntConverter();
