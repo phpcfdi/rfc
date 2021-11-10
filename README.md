@@ -95,7 +95,7 @@ Provee métodos para crear una cadena de caracteres que es una clave RFC:
 
 Para entender esta librería en el ámbito de desarrollo (para extender o modificar), lee los siguientes documentos:
 
-- [Entorno de desarrollo](develop/EntornoDesarrollo.md).
+- [Revisa la guía de contribución][CONTRIBUTING].
 - [Consideraciones generales de la librería](develop/Generales.md).
 - [Conversión de un RFC a entero y viceversa](develop/ConversionEntero.md).
 - [Generador de RFC ficticios](develop/RfcFaker.md).
@@ -112,8 +112,8 @@ mismos canales de comunicación para obtener ayuda de algún miembro de la comun
 Esta librería se mantendrá compatible con al menos la versión con
 [soporte activo de PHP](https://www.php.net/supported-versions.php) más reciente.
 
-También utilizamos [Versionado Semántico 2.0.0](docs/SEMVER.md) por lo que puedes usar esta librería
-sin temor a romper tu aplicación.
+También utilizamos [Versionado Semántico 2.0.0](docs/SEMVER.md) por lo que puedes
+usar esta librería sin temor a romper tu aplicación.
 
 ## Contribuciones
 
@@ -122,7 +122,7 @@ y recuerda revisar el archivo de tareas pendientes [TODO][] y el archivo [CHANGE
 
 ## Copyright and License
 
-The `phpcfdi/rfc` library is copyright © [PhpCfdi](https://www.phpcfdi.com)
+The `phpcfdi/rfc` library is copyright © [PhpCfdi](https://www.phpcfdi.com/)
 and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
 
 [contributing]: https://github.com/phpcfdi/rfc/blob/main/CONTRIBUTING.md
