@@ -4,6 +4,21 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
+## Cambios no liberados
+
+Los cambios no liberados no requieren de una nueva versión y son incluidos en la rama principal.
+
+### 2021-11-10 Revisión de archivos de desarrollo
+
+- Se corrige la documentación para el uso de la librería con `faker` en Laravel.
+- Se corrigen los archivos excluidos del paquete de producción.
+- Se actualiza PHPStan a 1.1.2.
+- Se cambia de `development/install-development-tools` a `phive` para administrar las dependencias de desarrollo.
+- Se actualizan los estilos a `PSR-12` y las configuraciones de `phpcs` y `php-cs-fixer`.
+- Se elimina la actualización de `composer` de Scrutinizer.
+- Se elimina el archivo superfluo `development/EntornoDesarrollo.md`.
+- Se agrega el proyecto a SonarCloud.
+
 ## Versión 1.1.0
 
 Dependencias:

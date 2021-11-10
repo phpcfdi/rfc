@@ -18,14 +18,11 @@ Ejemplos de comportamiento que contribuyen a crear un ambiente positivo para nue
 
 Ejemplos de comportamiento inaceptable:
 
-* El uso de lenguaje o imágenes sexualizadas, y aproximaciones o
-  atenciones sexuales de cualquier tipo
+* El uso de lenguaje o imágenes sexualizadas, y aproximaciones o atenciones sexuales de cualquier tipo
 * Comentarios despectivos (_trolling_), insultantes o derogatorios, y ataques personales o políticos
 * El acoso en público o privado
-* Publicar información privada de otras personas, tales como direcciones físicas o de correo
-  electrónico, sin su permiso explícito
-* Otras conductas que puedan ser razonablemente consideradas como inapropiadas en un
-  entorno profesional
+* Publicar información privada de otras personas, tales como direcciones físicas o de correo electrónico, sin su permiso explícito
+* Otras conductas que puedan ser razonablemente consideradas como inapropiadas en un entorno profesional
 
 ## Aplicación de las responsabilidades
 
@@ -39,7 +36,7 @@ Este código de conducta aplica tanto a espacios del proyecto como a espacios p�
 
 ## Aplicación
 
-Instancias de comportamiento abusivo, acosador o inaceptable de otro modo podrán ser reportadas a los administradores de la comunidad responsables del cumplimiento a través de [coc@phpcfdi.com](). Todas las quejas serán evaluadas e investigadas de una manera puntual y justa.
+Instancias de comportamiento abusivo, acosador o inaceptable de otro modo podrán ser reportadas a los administradores de la comunidad responsables del cumplimiento a través de [coc@phpcfdi.com](mailto:coc@phpcfdi.com). Todas las quejas serán evaluadas e investigadas de una manera puntual y justa.
 
 Todos los administradores de la comunidad están obligados a respetar la privacidad y la seguridad de quienes reporten incidentes.
 
@@ -73,12 +70,8 @@ Los administradores de la comunidad seguirán estas Guías de Impacto en la Comu
 
 ## Atribución
 
-Este Código de Conducta es una adaptación del [Contributor Covenant][homepage], versión 2.0,
-disponible en <https://www.contributor-covenant.org/es/version/2/0/code_of_conduct.html>.
+Este Código de Conducta es una adaptación del [Contributor Covenant](https://www.contributor-covenant.org), versión 2.0, disponible en <https://www.contributor-covenant.org/es/version/2/0/code_of_conduct.html>.
 
 Las Guías de Impacto en la Comunidad están inspiradas en la [escalera de aplicación del código de conducta de Mozilla](https://github.com/mozilla/diversity).
 
-[homepage]: https://www.contributor-covenant.org
-
-Para respuestas a las preguntas frecuentes de este código de conducta, consulta las FAQ en <https://www.contributor-covenant.org/faq>.
-Hay traducciones disponibles en <https://www.contributor-covenant.org/translations>.
+Para respuestas a las preguntas frecuentes de este código de conducta, consulta las FAQ en <https://www.contributor-covenant.org/faq>. Hay traducciones disponibles en <https://www.contributor-covenant.org/translations>.

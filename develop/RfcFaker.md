@@ -24,10 +24,10 @@ También se puede usar ese mismo objeto dentro de la librería más común para 
 ```php
 $faker = new Faker\Generator();
 $faker->addProvider(new PhpCfdi\Rfc\RfcFaker());
-$rfc = $faker->mexicanRfc;
-$rfcMoral = $faker->mexicanRfcMoral;
-$rfcFisica = $faker->mexicanRfcFisica;
-``` 
+$rfc = $faker->mexicanRfc();
+$rfcMoral = $faker->mexicanRfcMoral();
+$rfcFisica = $faker->mexicanRfcFisica();
+```
 
 ## Integración con `Laravel`
 
@@ -41,6 +41,7 @@ al ser parte de sus llamadas `factories`.
 // File: app/Providers/AppServiceProvider.php
 
 use Faker\Generator as FakerGenerator;
+use PhpCfdi\Rfc\RfcFaker;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -48,9 +49,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         // ...
-        $this->app->extend(FakerGenerator::class, function($generator, $app) {
-            /** @var FakerGenerator $generator */
-            $generator->addProvider(new RfcProvider());
+        $this->app->extend(FakerGenerator::class, function($generator) {
+            $generator->addProvider(new RfcFaker());
             return $generator;
         });
         // ...

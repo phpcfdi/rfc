@@ -8,6 +8,11 @@
 [![Coverage Status][badge-coverage]][coverage]
 [![Total Downloads][badge-downloads]][downloads]
 
+[![Reliability][badge-sonar-reliability]][sonar-reliability]
+[![Maintainability][badge-sonar-maintainability]][sonar-maintainability]
+[![Code Coverage][badge-sonar-coverage]][sonar-coverage]
+[![Violations][badge-sonar-violations]][sonar-violations]
+
 > Librería de PHP para trabajar con RFC.
 
 :us: The documentation of this project is in spanish as this is the natural language for the intended audience.
@@ -95,7 +100,7 @@ Provee métodos para crear una cadena de caracteres que es una clave RFC:
 
 Para entender esta librería en el ámbito de desarrollo (para extender o modificar), lee los siguientes documentos:
 
-- [Entorno de desarrollo](develop/EntornoDesarrollo.md).
+- [Revisa la guía de contribución][CONTRIBUTING].
 - [Consideraciones generales de la librería](develop/Generales.md).
 - [Conversión de un RFC a entero y viceversa](develop/ConversionEntero.md).
 - [Generador de RFC ficticios](develop/RfcFaker.md).
@@ -112,8 +117,8 @@ mismos canales de comunicación para obtener ayuda de algún miembro de la comun
 Esta librería se mantendrá compatible con al menos la versión con
 [soporte activo de PHP](https://www.php.net/supported-versions.php) más reciente.
 
-También utilizamos [Versionado Semántico 2.0.0](docs/SEMVER.md) por lo que puedes usar esta librería
-sin temor a romper tu aplicación.
+También utilizamos [Versionado Semántico 2.0.0](docs/SEMVER.md) por lo que puedes
+usar esta librería sin temor a romper tu aplicación.
 
 ## Contribuciones
 
@@ -122,7 +127,7 @@ y recuerda revisar el archivo de tareas pendientes [TODO][] y el archivo [CHANGE
 
 ## Copyright and License
 
-The `phpcfdi/rfc` library is copyright © [PhpCfdi](https://www.phpcfdi.com)
+The `phpcfdi/rfc` library is copyright © [PhpCfdi](https://www.phpcfdi.com/)
 and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
 
 [contributing]: https://github.com/phpcfdi/rfc/blob/main/CONTRIBUTING.md
@@ -136,6 +141,10 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [quality]: https://scrutinizer-ci.com/g/phpcfdi/rfc/
 [coverage]: https://scrutinizer-ci.com/g/phpcfdi/rfc/code-structure/main/code-coverage
 [downloads]: https://packagist.org/packages/phpcfdi/rfc
+[sonar-reliability]:https://sonarcloud.io/component_measures?id=phpcfdi_rfc&metric=Reliability
+[sonar-maintainability]: https://sonarcloud.io/component_measures?id=phpcfdi_rfc&metric=Maintainability
+[sonar-coverage]: https://sonarcloud.io/component_measures?id=phpcfdi_rfc&metric=Coverage
+[sonar-violations]: https://sonarcloud.io/project/issues?id=phpcfdi_rfc&resolved=false
 
 [badge-source]: http://img.shields.io/badge/source-phpcfdi/rfc-blue?style=flat-square
 [badge-release]: https://img.shields.io/github/release/phpcfdi/rfc?style=flat-square
@@ -144,3 +153,7 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [badge-quality]: https://img.shields.io/scrutinizer/g/phpcfdi/rfc/main?style=flat-square
 [badge-coverage]: https://img.shields.io/scrutinizer/coverage/g/phpcfdi/rfc/main?style=flat-square
 [badge-downloads]: https://img.shields.io/packagist/dt/phpcfdi/rfc?style=flat-square
+[badge-sonar-reliability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_rfc&metric=reliability_rating
+[badge-sonar-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_rfc&metric=sqale_rating
+[badge-sonar-coverage]: https://img.shields.io/sonar/coverage/phpcfdi_rfc/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
+[badge-sonar-violations]: https://img.shields.io/sonar/violations/phpcfdi_rfc/main?format=long&logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
