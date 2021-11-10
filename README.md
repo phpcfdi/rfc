@@ -8,6 +8,11 @@
 [![Coverage Status][badge-coverage]][coverage]
 [![Total Downloads][badge-downloads]][downloads]
 
+[![Reliability][badge-sonar-reliability]][sonar-reliability]
+[![Maintainability][badge-sonar-maintainability]][sonar-maintainability]
+[![Code Coverage][badge-sonar-coverage]][sonar-coverage]
+[![Violations][badge-sonar-violations]][sonar-violations]
+
 > Librería de PHP para trabajar con RFC.
 
 :us: The documentation of this project is in spanish as this is the natural language for the intended audience.
@@ -136,6 +141,10 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [quality]: https://scrutinizer-ci.com/g/phpcfdi/rfc/
 [coverage]: https://scrutinizer-ci.com/g/phpcfdi/rfc/code-structure/main/code-coverage
 [downloads]: https://packagist.org/packages/phpcfdi/rfc
+[sonar-reliability]:https://sonarcloud.io/component_measures?id=phpcfdi_rfc&metric=Reliability
+[sonar-maintainability]: https://sonarcloud.io/component_measures?id=phpcfdi_rfc&metric=Maintainability
+[sonar-coverage]: https://sonarcloud.io/component_measures?id=phpcfdi_rfc&metric=Coverage
+[sonar-violations]: https://sonarcloud.io/project/issues?id=phpcfdi_rfc&resolved=false
 
 [badge-source]: http://img.shields.io/badge/source-phpcfdi/rfc-blue?style=flat-square
 [badge-release]: https://img.shields.io/github/release/phpcfdi/rfc?style=flat-square
@@ -144,3 +153,7 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [badge-quality]: https://img.shields.io/scrutinizer/g/phpcfdi/rfc/main?style=flat-square
 [badge-coverage]: https://img.shields.io/scrutinizer/coverage/g/phpcfdi/rfc/main?style=flat-square
 [badge-downloads]: https://img.shields.io/packagist/dt/phpcfdi/rfc?style=flat-square
+[badge-sonar-reliability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_rfc&metric=reliability_rating
+[badge-sonar-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_rfc&metric=sqale_rating
+[badge-sonar-coverage]: https://img.shields.io/sonar/coverage/phpcfdi_rfc/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
+[badge-sonar-violations]: https://img.shields.io/sonar/violations/phpcfdi_rfc/main?format=long&logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io

@@ -17,6 +17,7 @@ Los cambios no liberados no requieren de una nueva versión y son incluidos en l
 - Se actualizan los estilos a `PSR-12` y las configuraciones de `phpcs` y `php-cs-fixer`.
 - Se elimina la actualización de `composer` de Scrutinizer.
 - Se elimina el archivo superfluo `development/EntornoDesarrollo.md`.
+- Se agrega el proyecto a SonarCloud.
 
 ## Versión 1.1.0
 
