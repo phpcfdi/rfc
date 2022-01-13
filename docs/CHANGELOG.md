@@ -8,6 +8,13 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 Los cambios no liberados no requieren de una nueva versión y son incluidos en la rama principal.
 
+### 2022-01-12 Mantenimiento
+
+- Se separan los flujos de integración continua en `build` y `coverage`.
+- Se usa SonarCloud para llevar la calidad del proyecto en lugar de Scrutinizer. Gracias Scrutinizer.
+- Se modifican los *badges* en el archivo `README`.
+- Se corrige el nombre del grupo de mantenimiento de PhpCfdi.
+
 ### 2021-11-10 Revisión de archivos de desarrollo
 
 - Se corrige la documentación para el uso de la librería con `faker` en Laravel.
