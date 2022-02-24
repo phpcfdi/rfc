@@ -8,7 +8,7 @@ namespace PhpCfdi\Rfc\Tests\Unit;
 
 use PhpCfdi\Rfc\Exceptions\InvalidExpressionToParseException;
 use PhpCfdi\Rfc\RfcParser;
-use PHPUnit\Framework\TestCase;
+use PhpCfdi\Rfc\Tests\TestCase;
 
 final class RfcParserTest extends TestCase
 {

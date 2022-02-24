@@ -6,7 +6,7 @@ namespace PhpCfdi\Rfc\Tests\Unit\Exceptions;
 
 use PhpCfdi\Rfc\Exceptions\InvalidExpressionToParseException;
 use PhpCfdi\Rfc\Exceptions\RfcException;
-use PHPUnit\Framework\TestCase;
+use PhpCfdi\Rfc\Tests\TestCase;
 
 final class InvalidExpressionToParseExceptionTest extends TestCase
 {

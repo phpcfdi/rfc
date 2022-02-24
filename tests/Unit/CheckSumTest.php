@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PhpCfdi\Rfc\Tests\Unit;
 
 use PhpCfdi\Rfc\CheckSum;
-use PHPUnit\Framework\TestCase;
+use PhpCfdi\Rfc\Tests\TestCase;
 
 final class CheckSumTest extends TestCase
 {

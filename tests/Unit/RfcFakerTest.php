@@ -11,9 +11,9 @@ namespace PhpCfdi\Rfc\Tests\Unit;
 
 use PhpCfdi\Rfc\Rfc;
 use PhpCfdi\Rfc\RfcFaker;
-use PHPUnit\Framework\TestCase;
+use PhpCfdi\Rfc\Tests\TestCase;
 
-class RfcFakerTest extends TestCase
+final class RfcFakerTest extends TestCase
 {
     /** @var number of times to run fakes */
     private $iterations = 100;
