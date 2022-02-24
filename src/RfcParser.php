@@ -51,15 +51,15 @@ final class RfcParser
          * - letras y números para el nombre (3 para morales, 4 para físicas)
          *      (?<name>[A-ZÑ&]{3,4})
          * - año mes y día, la validez de la fecha se comprueba después
-         *      (?<year>[0-9]{2})(?<month>[0-9]{2})(?<day>[0-9]{2})
+         *      (?<year>\d{2})(?<month>\d{2})(?<day>\d{2})
          * - homoclave (letra o dígito 2 veces + A o dígito 1 vez)
-         *      (?<hkey>[A-Z0-9]{2})(?<checksum>[A0-9]{1})
+         *      (?<hkey>[A-Z\d]{2})(?<checksum>[A\d])
          * - hasta el final
          *      $/
          * - tratamiento unicode
          *      u
          */
-        $regex = '/^(?<name>[A-ZÑ&]{3,4})(?<year>[0-9]{2})(?<month>[0-9]{2})(?<day>[0-9]{2})(?<hkey>[A-Z0-9]{2})(?<checksum>[A0-9]{1})$/u';
+        $regex = '/^(?<name>[A-ZÑ&]{3,4})(?<year>\d{2})(?<month>\d{2})(?<day>\d{2})(?<hkey>[A-Z\d]{2})(?<checksum>[A\d])$/u';
         if (1 !== preg_match($regex, mb_strtoupper($rfc), $matches)) {
             throw Exceptions\InvalidExpressionToParseException::invalidParts($rfc);
         }

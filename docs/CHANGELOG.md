@@ -8,6 +8,13 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 Los cambios no liberados no requieren de una nueva versión y son incluidos en la rama principal.
 
+## Versión 1.1.1
+
+Se actualiza la expresión regular para lectura de RFC con las recomendaciones de simplificación:
+se sustituye `[0-9]` por `\d` y se elimina el calificador `{1}` innecesario. 
+
+Se incluyen los cambios previos no liberados de mantenimiento.
+
 ### 2022-02-23 Mantenimiento
 
 - Se actualiza el año en el archivo de licencia. Feliz 2022.
