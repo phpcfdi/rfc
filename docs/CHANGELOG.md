@@ -8,6 +8,14 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 Los cambios no liberados no requieren de una nueva versión y son incluidos en la rama principal.
 
+### 2022-02-23 Mantenimiento
+
+- Se actualiza el año en el archivo de licencia. Feliz 2022.
+- Se actualizan las herramientas de desarrollo.
+- Se actualiza el archivo de configuración de Psalm, el atributo `totallyTyped` está deprecado.
+- Se agrega PHP 8.1 a la matriz de pruebas de PHP.
+- Se crea la clase abstracta `PhpCfdi\Rfc\Tests\TestCase` para no depender directamente de `PHPUnit\Framework\TestCase`.
+
 ### 2022-01-12 Mantenimiento
 
 - Se separan los flujos de integración continua en `build` y `coverage`.

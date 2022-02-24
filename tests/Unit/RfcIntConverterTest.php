@@ -12,7 +12,7 @@ namespace PhpCfdi\Rfc\Tests\Unit;
 use PhpCfdi\Rfc\Exceptions\InvalidIntegerToConvertException;
 use PhpCfdi\Rfc\Rfc;
 use PhpCfdi\Rfc\RfcIntConverter;
-use PHPUnit\Framework\TestCase;
+use PhpCfdi\Rfc\Tests\TestCase;
 
 final class RfcIntConverterTest extends TestCase
 {

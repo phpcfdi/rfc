@@ -6,7 +6,7 @@ namespace PhpCfdi\Rfc\Tests\Unit\Exceptions;
 
 use PhpCfdi\Rfc\Exceptions\InvalidIntegerToConvertException;
 use PhpCfdi\Rfc\Exceptions\RfcException;
-use PHPUnit\Framework\TestCase;
+use PhpCfdi\Rfc\Tests\TestCase;
 
 final class InvalidIntegerToConvertExceptionTest extends TestCase
 {
