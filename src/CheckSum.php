@@ -6,7 +6,7 @@ namespace PhpCfdi\Rfc;
 
 final class CheckSum
 {
-    private static $DICTIONARY = [];
+    private array $dictionary;
 
     /**
      * Se encarga de generar el diccionario a usar.
@@ -14,12 +14,11 @@ final class CheckSum
     public function __construct()
     {
         $dictionary = '0123456789ABCDEFGHIJKLMN&OPQRSTUVWXYZ #';
-        if (count(self::$DICTIONARY) > 0) {
-            return;
-        }
+        $dic = [];
         foreach (str_split($dictionary) as $index => $char) {
-            self::$DICTIONARY[$char] = $index;
+            $dic = array_merge($dic, [$char => $index]);
         }
+        $this->dictionary = $dic;
     }
 
     public function calculate(string $rfc): string
@@ -30,7 +29,7 @@ final class CheckSum
         array_pop($chars); // remove predefined checksum
         $sum = (12 === $length) ? 481 : 0; // 481 para morales, 0 para físicas
         foreach ($chars as $i => $char) {
-            $posChar = self::$DICTIONARY[$char];
+            $posChar = intval($this->dictionary[$char]);
             $factor = $length - $i;
             $sum += $posChar * $factor;
         }
