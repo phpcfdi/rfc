@@ -6,7 +6,7 @@ namespace PhpCfdi\Rfc;
 
 final class CheckSum
 {
-    private $dictionary;
+    private $dictionary = [];
 
     /**
      * Se encarga de generar el diccionario a usar.
