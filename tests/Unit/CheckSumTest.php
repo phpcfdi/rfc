@@ -9,20 +9,29 @@ use PhpCfdi\Rfc\Tests\TestCase;
 
 final class CheckSumTest extends TestCase
 {
-    public function testCheckSum(): void
+    /** @return array<string, array{string, string}> */
+    public function providerCheckSum(): array
     {
-        $expected = 'A';
-        $rfc = 'COSC8001137NA';
+        return [
+            'física 0' => ['CAMA911215CJ0', '0'],
+            'física A' => ['COSC8001137NA', 'A'],
+            'física [1-9]' => ['SORC591116FJ6', '6'],
 
-        $checksum = new CheckSum();
-        $this->assertSame($expected, $checksum->calculate($rfc));
+            'moral A' => ['DIM8701081LA', 'A'],
+            'moral 0' => ['A&A050908GT0', '0'],
+            'moral [1-9]' => ['SAT970701NN3', '3'],
+
+            'multibyte' => ['AÑÑ801231JK0', '0'],
+
+            'empty rfc' => ['', '0'],
+            'invalid rfc' => ['$', '0'],
+            'invalid chars' => ['AAA010101$$$', '7'], // $ is managed as 0
+        ];
     }
 
-    public function testCheckSumWithMultiByte(): void
+    /** @dataProvider providerCheckSum */
+    public function testCheckSum(string $rfc, string $expected): void
     {
-        $expected = '0';
-        $rfc = 'AÑÑ801231JK0';
-
         $checksum = new CheckSum();
         $this->assertSame($expected, $checksum->calculate($rfc));
     }
