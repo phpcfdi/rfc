@@ -95,6 +95,21 @@ Provee métodos para crear una cadena de caracteres que es una clave RFC:
 - `RfcFaker::mexicanRfcMoral()` para persona moral (12 posiciones).
 - `RfcFaker::mexicanRfc()` indistintamente una persona moral o física.
 
+## Dígito verificador
+
+Se puede obtener el dígito verificador calculado con el método `Rfc::calculateCheckSum()`,
+así como conocer si el dígito verificador coincide con el método `Rfc::doesCheckSumMatch()`.
+
+La además provee la clase `CheckSum` para realizar el cálculo del dígito verificador de un RFC.
+Cabe mencionar que, si bien debería ser siempre coincidente, hay algunos casos donde esto
+no se respeta (SAT, ¿todo bien?), por ejemplo, el caso de *Restaurantes TOKS* ha tenido
+los RFC `RT0840921REA` (dígito `A`) y también `RT0840921RE4`.
+
+Puede ver el procedimiento del dígito verificador en alguno de estos enlaces:
+
+- <https://www.studocu.com/es-mx/document/universidad-del-valle-de-mexico/administracion/algoritmo-para-generar-el-rfc-con-homoclave-para-personas-fisicas-y-morales/12002840>
+- <https://solucionfactible.com/sfic/capitulos/timbrado/rfc-digito-verificador.jsp>
+
 ## Desarrollo
 
 Para entender esta librería en el ámbito de desarrollo (para extender o modificar), lee los siguientes documentos:

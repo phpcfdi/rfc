@@ -8,6 +8,16 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 Los cambios no liberados no requieren de una nueva versión y son incluidos en la rama principal.
 
+## Versión 1.1.2
+
+Se actualiza la clase `CheckSum` y se mejoran las pruebas unitarias sobre la misma.
+Gracias a `@fitorec` por sus sugerencias en el [PR #14](https://github.com/phpcfdi/rfc/pull/14).
+
+Se actualizan las versiones de las herramientas de desarrollo.
+
+Al ejecutar el trabajo de integración continua en el trabajo `phpcs` se usan los directorios según
+el archivo de configuración. 
+
 ## Versión 1.1.1
 
 Se actualiza la expresión regular para lectura de RFC con las recomendaciones de simplificación:
