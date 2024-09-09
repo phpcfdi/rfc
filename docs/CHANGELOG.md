@@ -8,6 +8,21 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 Los cambios no liberados no requieren de una nueva versión y son incluidos en la rama principal.
 
+## Versión 1.1.3
+
+- Se actualiza el archivo de licencia a 2024.
+- Se actualiza la insignia de construcción del proyecto.
+- Se actualizan las reglas deprecadas de `php-cs-fixer`.
+- Se corrigen los archivos excluidos para SonarCloud.
+- Se aplican múltiples cambios en los flujos de trabajo de GitHub:
+    - Se usan las acciones versión 4.
+    - Se usa `$GITHUB_OUTPUT` en lugar de `::set-output`.
+    - Se usa `matrix.php-version` wn lugar de `matrix.php-versions`.
+    - Se agrega PHP 8.2 y PHP 8.3 a la matriz de pruebas.
+    - Se ejecutan las pruebas en PHP 8.3.
+    - Se permite ejecutar los flujos a voluntad.
+- Se actualizan las herramientas de desarrollo.
+
 ## Versión 1.1.2
 
 Se actualiza la clase `CheckSum` y se mejoran las pruebas unitarias sobre la misma.

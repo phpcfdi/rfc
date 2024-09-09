@@ -16,7 +16,7 @@
 
 :us: The documentation of this project is in spanish as this is the natural language for the intended audience.
 
-## Acerca de 
+## Acerca de
 
 En México, toda persona física o moral para realizar cualquier actividad económica requiere de un registro
 ante la Secretaría de Hacienda y Crédito Público (SHCP) llamado Registro Federal de Contribuyentes (RFC).
@@ -165,7 +165,7 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [badge-php-version]: https://img.shields.io/packagist/php-v/phpcfdi/rfc?logo=php
 [badge-release]: https://img.shields.io/github/release/phpcfdi/rfc?logo=git
 [badge-license]: https://img.shields.io/github/license/phpcfdi/rfc?logo=open-source-initiative
-[badge-build]: https://img.shields.io/github/workflow/status/phpcfdi/rfc/build/main?logo=github-actions
+[badge-build]: https://img.shields.io/github/actions/workflow/status/phpcfdi/rfc/build.yml?branch=main&logo=github-actions
 [badge-reliability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_rfc&metric=reliability_rating
 [badge-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_rfc&metric=sqale_rating
 [badge-coverage]: https://img.shields.io/sonar/coverage/phpcfdi_rfc/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
