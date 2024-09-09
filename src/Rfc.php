@@ -128,7 +128,7 @@ final class Rfc implements JsonSerializable
      */
     public function isFisica(): bool
     {
-        return (13 === $this->length);
+        return 13 === $this->length;
     }
 
     /**
@@ -137,7 +137,7 @@ final class Rfc implements JsonSerializable
      */
     public function isMoral(): bool
     {
-        return (12 === $this->length);
+        return 12 === $this->length;
     }
 
     /**
@@ -147,7 +147,7 @@ final class Rfc implements JsonSerializable
      */
     public function isGeneric(): bool
     {
-        return (self::RFC_GENERIC === $this->rfc);
+        return self::RFC_GENERIC === $this->rfc;
     }
 
     /**
@@ -157,7 +157,7 @@ final class Rfc implements JsonSerializable
      */
     public function isForeign(): bool
     {
-        return (self::RFC_FOREIGN === $this->rfc);
+        return self::RFC_FOREIGN === $this->rfc;
     }
 
     /**
