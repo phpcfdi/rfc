@@ -16,7 +16,7 @@
 
 :us: The documentation of this project is in spanish as this is the natural language for the intended audience.
 
-## Acerca de 
+## Acerca de
 
 En México, toda persona física o moral para realizar cualquier actividad económica requiere de un registro
 ante la Secretaría de Hacienda y Crédito Público (SHCP) llamado Registro Federal de Contribuyentes (RFC).
