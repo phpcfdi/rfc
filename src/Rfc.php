@@ -23,17 +23,15 @@ final class Rfc implements JsonSerializable
      */
     public const RFC_FOREIGN = 'XEXX010101000';
 
-    /** @var string */
-    private $rfc;
+    private string $rfc;
 
-    /** @var int */
-    private $length;
+    private int $length;
 
     /** @var string|null contains calculated checksum */
-    private $checkSum;
+    private ?string $checkSum = null;
 
     /** @var int|null contains calculated integer representation */
-    private $serial;
+    private ?int $serial = null;
 
     private function __construct(string $rfc)
     {

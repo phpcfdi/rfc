@@ -10,22 +10,22 @@ namespace PhpCfdi\Rfc;
 final class RfcParser
 {
     /** @var string "siglas" part ____000101AAA */
-    private $name;
+    private string $name;
 
     /** @var int "año" part AAAA__0101AAA */
-    private $year;
+    private int $year;
 
     /** @var int "mes" part AAAA00__01AAA */
-    private $month;
+    private int $month;
 
     /** @var int "día" part AAAA0001__AAA */
-    private $day;
+    private int $day;
 
     /** @var string "homoclave" part AAAA000101__A */
-    private $hkey;
+    private string $hkey;
 
     /** @var string "dígito verificador" part AAAA000101AA_ */
-    private $checksum;
+    private string $checksum;
 
     private function __construct(string $name, int $year, int $month, int $day, string $hkey, string $checksum)
     {
