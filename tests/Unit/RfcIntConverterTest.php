@@ -45,8 +45,6 @@ final class RfcIntConverterTest extends TestCase
     }
 
     /**
-     * @param int $inputSerial
-     * @param string $inputRfc
      * @testWith [40270344269627, "COSC8001137NA"]
      * @testWith [ 1348025748541,  "DIM8701081LA"]
      */

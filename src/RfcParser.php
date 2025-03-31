@@ -38,8 +38,6 @@ final class RfcParser
     }
 
     /**
-     * @param string $rfc
-     * @return self
      * @throws Exceptions\InvalidExpressionToParseException
      */
     public static function parse(string $rfc): self

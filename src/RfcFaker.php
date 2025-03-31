@@ -21,7 +21,6 @@ final class RfcFaker
     /**
      * Return an RFC for Persona Moral (12 multi-byte chars length) or Persona Fisica (13 multi-byte chars length)
      *
-     * @return string
      * @example COSC8001137NA, EKU9003173C9
      */
     public function mexicanRfc(): string
@@ -33,7 +32,6 @@ final class RfcFaker
     /**
      * Return an RFC for Persona Moral (12 multi-byte chars length)
      *
-     * @return string
      * @example EKU9003173C9
      */
     public function mexicanRfcMoral(): string
@@ -44,7 +42,6 @@ final class RfcFaker
     /**
      * Return an RFC for Persona Fisica (13 multi-byte chars length)
      *
-     * @return string
      * @example COSC8001137NA
      */
     public function mexicanRfcFisica(): string

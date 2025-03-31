@@ -58,9 +58,6 @@ final class RfcIntConverter
      * Convert a valid uppercase RFC string expression to integer.
      *
      * Be aware that if you provide malformed RFC will return an integer but it might not be able to convert it back.
-     *
-     * @param string $rfc
-     * @return int
      */
     public function stringToInt(string $rfc): int
     {
@@ -81,8 +78,6 @@ final class RfcIntConverter
     /**
      * Convert an integer expression to a valid RFC string expression.
      *
-     * @param int $value
-     * @return string
      * @throws Exceptions\InvalidIntegerToConvertException if value is lower than zero or greater than maximum value
      */
     public function intToString(int $value): string

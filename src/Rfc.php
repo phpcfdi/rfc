@@ -44,8 +44,6 @@ final class Rfc implements JsonSerializable
     /**
      * Parse a string and return a new Rfc instance, otherwise will throw an exception.
      *
-     * @param string $rfc
-     * @return self
      * @throws Exceptions\InvalidExpressionToParseException
      */
     public static function parse(string $rfc): self
@@ -66,7 +64,6 @@ final class Rfc implements JsonSerializable
     /**
      * Parse a string, if unable to parse will return NULL.
      *
-     * @param string $rfc
      * @return self|null
      */
     public static function parseOrNull(string $rfc): ?self
@@ -80,9 +77,6 @@ final class Rfc implements JsonSerializable
 
     /**
      * Method to create the object if and only you already thrust the contents.
-     *
-     * @param string $rfc
-     * @return self
      */
     public static function unparsed(string $rfc): self
     {
@@ -92,8 +86,6 @@ final class Rfc implements JsonSerializable
     /**
      * Create a Rfc object based on its numeric representation.
      *
-     * @param int $serial
-     * @return self
      * @throws Exceptions\InvalidIntegerToConvertException
      */
     public static function fromSerial(int $serial): self
@@ -113,8 +105,6 @@ final class Rfc implements JsonSerializable
 
     /**
      * Return the rfc content, remember that it is a multi-byte string
-     *
-     * @return string
      */
     public function getRfc(): string
     {
@@ -123,8 +113,6 @@ final class Rfc implements JsonSerializable
 
     /**
      * Return TRUE if the RFC corresponds to a "Persona Física"
-     *
-     * @return bool
      */
     public function isFisica(): bool
     {
@@ -133,7 +121,6 @@ final class Rfc implements JsonSerializable
 
     /**
      * Return TRUE if the RFC corresponds to a "Persona Moral"
-     * @return bool
      */
     public function isMoral(): bool
     {
@@ -142,8 +129,6 @@ final class Rfc implements JsonSerializable
 
     /**
      * Returns TRUE if the Rfc corresponds to a generic local Rfc
-     *
-     * @return bool
      */
     public function isGeneric(): bool
     {
@@ -152,8 +137,6 @@ final class Rfc implements JsonSerializable
 
     /**
      * Returns TRUE if the Rfc corresponds to a generic foreign Rfc
-     *
-     * @return bool
      */
     public function isForeign(): bool
     {
@@ -163,8 +146,6 @@ final class Rfc implements JsonSerializable
     /**
      * Calculates the checksum of the RFC.
      * Be aware that there are some valid RFC with invalid checksum.
-     *
-     * @return string
      */
     public function calculateCheckSum(): string
     {
@@ -177,8 +158,6 @@ final class Rfc implements JsonSerializable
     /**
      * Return TRUE if the last character of the RFC is the same as the calculated checksum.
      * Be aware that there are some valid RFC with invalid checksum.
-     *
-     * @return bool
      */
     public function doesCheckSumMatch(): bool
     {
@@ -187,8 +166,6 @@ final class Rfc implements JsonSerializable
 
     /**
      * Calculates the serial number (integer representation) of the RFC
-     *
-     * @return int
      */
     public function calculateSerial(): int
     {
