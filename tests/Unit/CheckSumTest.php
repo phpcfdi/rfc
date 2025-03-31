@@ -10,7 +10,7 @@ use PhpCfdi\Rfc\Tests\TestCase;
 final class CheckSumTest extends TestCase
 {
     /** @return array<string, array{string, string}> */
-    public function providerCheckSum(): array
+    public static function providerCheckSum(): array
     {
         return [
             'física 0' => ['CAMA911215CJ0', '0'],
