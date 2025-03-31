@@ -15,7 +15,7 @@ use PhpCfdi\Rfc\Tests\TestCase;
 
 final class RfcFakerTest extends TestCase
 {
-    /** @var number of times to run fakes */
+    /** @var int The number of times to run fakes */
     private $iterations = 100;
 
     public function testMexicanRfc(): void
