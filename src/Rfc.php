@@ -9,7 +9,7 @@ use JsonSerializable;
 /**
  * Value object representation of an RFC.
  */
-final class Rfc implements JsonSerializable
+final class Rfc implements JsonSerializable, \Stringable
 {
     /**
      * Generic representation of RFC (some use cases include to invoice without RFC)
@@ -23,8 +23,6 @@ final class Rfc implements JsonSerializable
      */
     public const RFC_FOREIGN = 'XEXX010101000';
 
-    private string $rfc;
-
     private int $length;
 
     /** @var string|null contains calculated checksum */
@@ -33,9 +31,8 @@ final class Rfc implements JsonSerializable
     /** @var int|null contains calculated integer representation */
     private ?int $serial = null;
 
-    private function __construct(string $rfc)
+    private function __construct(private string $rfc)
     {
-        $this->rfc = $rfc;
         $this->length = mb_strlen($this->rfc);
     }
 
@@ -68,7 +65,7 @@ final class Rfc implements JsonSerializable
     {
         try {
             return self::parse($rfc);
-        } catch (Exceptions\InvalidExpressionToParseException $exception) {
+        } catch (Exceptions\InvalidExpressionToParseException) {
             return null;
         }
     }
