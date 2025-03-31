@@ -23,7 +23,7 @@ final class Rfc implements JsonSerializable, \Stringable
      */
     public const RFC_FOREIGN = 'XEXX010101000';
 
-    private int $length;
+    private readonly int $length;
 
     /** @var string|null contains calculated checksum */
     private ?string $checkSum = null;

@@ -18,12 +18,12 @@ final class RfcParser
      * @param string $checksum "dígito verificador" part AAAA000101AA_
      */
     private function __construct(
-        private string $name,
-        private int $year,
-        private int $month,
-        private int $day,
-        private string $hkey,
-        private string $checksum
+        private readonly string $name,
+        private readonly int $year,
+        private readonly int $month,
+        private readonly int $day,
+        private readonly string $hkey,
+        private readonly string $checksum
     ) {
     }
 

@@ -8,7 +8,7 @@ use Exception;
 
 final class InvalidIntegerToConvertException extends Exception implements RfcException
 {
-    private function __construct(string $message, private int $value)
+    private function __construct(string $message, private readonly int $value)
     {
         parent::__construct($message);
     }
