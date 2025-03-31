@@ -23,7 +23,7 @@ final class RfcParser
         private readonly int $month,
         private readonly int $day,
         private readonly string $hkey,
-        private readonly string $checksum
+        private readonly string $checksum,
     ) {
     }
 

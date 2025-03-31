@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace PhpCfdi\Rfc;
 
 use JsonSerializable;
+use Stringable;
 
 /**
  * Value object representation of an RFC.
  */
-final class Rfc implements JsonSerializable, \Stringable
+final class Rfc implements JsonSerializable, Stringable
 {
     /**
      * Generic representation of RFC (some use cases include to invoice without RFC)
