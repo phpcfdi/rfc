@@ -15,6 +15,7 @@ Los cambios no liberados no requieren de una nueva versión y son incluidos en l
 - Se actualiza el archivo de licencia a 2025.
 - Se mejora el código al eliminar paréntesis en las llamadas de retorno.
 - Se modifican las versiones del trabajo de prueba en el flujo de trabajo de construcción.
+- Se actualiza la herramienta de análisis de *Sonarqube*.
 - Se elimina *PSalm* como herramienta de desarrollo.
 
 ## Versión 1.1.3
