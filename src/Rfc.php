@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace PhpCfdi\Rfc;
 
 use JsonSerializable;
+use Stringable;
 
 /**
  * Value object representation of an RFC.
  */
-final class Rfc implements JsonSerializable
+final class Rfc implements JsonSerializable, Stringable
 {
     /**
      * Generic representation of RFC (some use cases include to invoice without RFC)
@@ -23,29 +24,22 @@ final class Rfc implements JsonSerializable
      */
     public const RFC_FOREIGN = 'XEXX010101000';
 
-    /** @var string */
-    private $rfc;
-
-    /** @var int */
-    private $length;
+    private readonly int $length;
 
     /** @var string|null contains calculated checksum */
-    private $checkSum;
+    private ?string $checkSum = null;
 
     /** @var int|null contains calculated integer representation */
-    private $serial;
+    private ?int $serial = null;
 
-    private function __construct(string $rfc)
+    private function __construct(private string $rfc)
     {
-        $this->rfc = $rfc;
         $this->length = mb_strlen($this->rfc);
     }
 
     /**
      * Parse a string and return a new Rfc instance, otherwise will throw an exception.
      *
-     * @param string $rfc
-     * @return self
      * @throws Exceptions\InvalidExpressionToParseException
      */
     public static function parse(string $rfc): self
@@ -66,23 +60,19 @@ final class Rfc implements JsonSerializable
     /**
      * Parse a string, if unable to parse will return NULL.
      *
-     * @param string $rfc
      * @return self|null
      */
     public static function parseOrNull(string $rfc): ?self
     {
         try {
             return self::parse($rfc);
-        } catch (Exceptions\InvalidExpressionToParseException $exception) {
+        } catch (Exceptions\InvalidExpressionToParseException) {
             return null;
         }
     }
 
     /**
      * Method to create the object if and only you already thrust the contents.
-     *
-     * @param string $rfc
-     * @return self
      */
     public static function unparsed(string $rfc): self
     {
@@ -92,8 +82,6 @@ final class Rfc implements JsonSerializable
     /**
      * Create a Rfc object based on its numeric representation.
      *
-     * @param int $serial
-     * @return self
      * @throws Exceptions\InvalidIntegerToConvertException
      */
     public static function fromSerial(int $serial): self
@@ -113,8 +101,6 @@ final class Rfc implements JsonSerializable
 
     /**
      * Return the rfc content, remember that it is a multi-byte string
-     *
-     * @return string
      */
     public function getRfc(): string
     {
@@ -123,48 +109,39 @@ final class Rfc implements JsonSerializable
 
     /**
      * Return TRUE if the RFC corresponds to a "Persona Física"
-     *
-     * @return bool
      */
     public function isFisica(): bool
     {
-        return (13 === $this->length);
+        return 13 === $this->length;
     }
 
     /**
      * Return TRUE if the RFC corresponds to a "Persona Moral"
-     * @return bool
      */
     public function isMoral(): bool
     {
-        return (12 === $this->length);
+        return 12 === $this->length;
     }
 
     /**
      * Returns TRUE if the Rfc corresponds to a generic local Rfc
-     *
-     * @return bool
      */
     public function isGeneric(): bool
     {
-        return (self::RFC_GENERIC === $this->rfc);
+        return self::RFC_GENERIC === $this->rfc;
     }
 
     /**
      * Returns TRUE if the Rfc corresponds to a generic foreign Rfc
-     *
-     * @return bool
      */
     public function isForeign(): bool
     {
-        return (self::RFC_FOREIGN === $this->rfc);
+        return self::RFC_FOREIGN === $this->rfc;
     }
 
     /**
      * Calculates the checksum of the RFC.
      * Be aware that there are some valid RFC with invalid checksum.
-     *
-     * @return string
      */
     public function calculateCheckSum(): string
     {
@@ -177,8 +154,6 @@ final class Rfc implements JsonSerializable
     /**
      * Return TRUE if the last character of the RFC is the same as the calculated checksum.
      * Be aware that there are some valid RFC with invalid checksum.
-     *
-     * @return bool
      */
     public function doesCheckSumMatch(): bool
     {
@@ -187,8 +162,6 @@ final class Rfc implements JsonSerializable
 
     /**
      * Calculates the serial number (integer representation) of the RFC
-     *
-     * @return int
      */
     public function calculateSerial(): int
     {

@@ -8,13 +8,9 @@ use Exception;
 
 final class InvalidIntegerToConvertException extends Exception implements RfcException
 {
-    /** @var int */
-    private $value;
-
-    private function __construct(string $message, int $value)
+    private function __construct(string $message, private readonly int $value)
     {
         parent::__construct($message);
-        $this->value = $value;
     }
 
     public static function lowerThanZero(int $value): self

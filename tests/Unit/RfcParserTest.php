@@ -57,7 +57,6 @@ final class RfcParserTest extends TestCase
     }
 
     /**
-     * @param string $value
      * @throws InvalidExpressionToParseException
      * @testWith [""]
      *           ["AAA-010101AAA"]
@@ -72,7 +71,6 @@ final class RfcParserTest extends TestCase
     }
 
     /**
-     * @param string $value
      * @throws InvalidExpressionToParseException
      * @testWith ["AAAA010229AAA"]
      *           ["AAAA010132AAA"]

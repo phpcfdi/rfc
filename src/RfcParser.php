@@ -9,37 +9,25 @@ namespace PhpCfdi\Rfc;
  */
 final class RfcParser
 {
-    /** @var string "siglas" part ____000101AAA */
-    private $name;
-
-    /** @var int "año" part AAAA__0101AAA */
-    private $year;
-
-    /** @var int "mes" part AAAA00__01AAA */
-    private $month;
-
-    /** @var int "día" part AAAA0001__AAA */
-    private $day;
-
-    /** @var string "homoclave" part AAAA000101__A */
-    private $hkey;
-
-    /** @var string "dígito verificador" part AAAA000101AA_ */
-    private $checksum;
-
-    private function __construct(string $name, int $year, int $month, int $day, string $hkey, string $checksum)
-    {
-        $this->name = $name;
-        $this->year = $year;
-        $this->month = $month;
-        $this->day = $day;
-        $this->hkey = $hkey;
-        $this->checksum = $checksum;
+    /**
+     * @param string $name "siglas" part ____000101AAA
+     * @param int $year "año" part AAAA__0101AAA
+     * @param int $month "mes" part AAAA00__01AAA
+     * @param int $day "día" part AAAA0001__AAA
+     * @param string $hkey "homoclave" part AAAA000101__A
+     * @param string $checksum "dígito verificador" part AAAA000101AA_
+     */
+    private function __construct(
+        private readonly string $name,
+        private readonly int $year,
+        private readonly int $month,
+        private readonly int $day,
+        private readonly string $hkey,
+        private readonly string $checksum,
+    ) {
     }
 
     /**
-     * @param string $rfc
-     * @return self
      * @throws Exceptions\InvalidExpressionToParseException
      */
     public static function parse(string $rfc): self

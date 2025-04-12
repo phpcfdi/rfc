@@ -114,7 +114,7 @@ Puede ver el procedimiento del dígito verificador en alguno de estos enlaces:
 
 Para entender esta librería en el ámbito de desarrollo (para extender o modificar), lee los siguientes documentos:
 
-- [Revisa la guía de contribución][CONTRIBUTING].
+- [Revisa la guía de contribución][contributing].
 - [Consideraciones generales de la librería](develop/Generales.md).
 - [Conversión de un RFC a entero y viceversa](develop/ConversionEntero.md).
 - [Generador de RFC ficticios](develop/RfcFaker.md).

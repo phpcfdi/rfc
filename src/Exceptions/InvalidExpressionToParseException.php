@@ -8,13 +8,9 @@ use Exception;
 
 final class InvalidExpressionToParseException extends Exception implements RfcException
 {
-    /** @var string */
-    private $rfc;
-
-    private function __construct(string $message, string $rfc)
+    private function __construct(string $message, private readonly string $rfc)
     {
         parent::__construct($message);
-        $this->rfc = $rfc;
     }
 
     public static function invalidParts(string $rfc): self

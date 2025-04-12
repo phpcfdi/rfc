@@ -8,6 +8,15 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 Los cambios no liberados no requieren de una nueva versión y son incluidos en la rama principal.
 
+## Versión 1.2.0
+
+- Se asegura la compatibilidad con PHP 8.4.
+- Se elimina la compatibilidad con PHP 7.3, 7.4 y 8.0.
+- Se actualiza el archivo de licencia a 2025.
+- Se mejora el código al eliminar paréntesis en las llamadas de retorno.
+- Se modifican las versiones del trabajo de prueba en el flujo de trabajo de construcción.
+- Se elimina *PSalm* como herramienta de desarrollo.
+
 ## Versión 1.1.3
 
 - Se actualiza el archivo de licencia a 2024.

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-    cacheResultFile="build/phpunit.result.cache"
+    cacheDirectory="build/phpunit.cache"
     bootstrap="tests/bootstrap.php"
     failOnRisky="true"
     failOnWarning="true"
     colors="true"
     >
 
-    <testsuites>
-        <testsuite name="default">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
-
-    <coverage cacheDirectory="build/phpunit.cache/code-coverage" processUncoveredFiles="true">
-        <include>
-            <directory>src</directory>
-        </include>
-    </coverage>
+  <testsuites>
+    <testsuite name="default">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+  <source>
+    <include>
+      <directory>src</directory>
+    </include>
+  </source>
 </phpunit>
