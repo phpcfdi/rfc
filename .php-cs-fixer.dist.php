@@ -18,6 +18,7 @@ return (new PhpCsFixer\Config())
         '@PHP81Migration' => true,
         '@PHP80Migration:risky' => true,
         // symfony
+        'array_indentation' => true,
         'class_attributes_separation' => true,
         'whitespace_after_comma_in_array' => true,
         'no_empty_statement' => true,

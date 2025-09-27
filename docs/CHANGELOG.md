@@ -8,6 +8,12 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 Los cambios no liberados no requieren de una nueva versión y son incluidos en la rama principal.
 
+### Mantenimiento 2025-09-26
+
+- Se actualizan las herramientas `phpcs` y `phpcbf` a la versión 4.0.0.
+- Se elimina la regla `Generic.Functions.CallTimePassByReference`.
+- Se actualiza `sonarqube-scan-action` a la versión 6.
+
 ## Versión 1.2.0
 
 - Se asegura la compatibilidad con PHP 8.4.
